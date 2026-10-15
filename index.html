@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TU NOMBRE · Desarrollador de software</title>
+<meta name="description" content="Portafolio de TU NOMBRE: desarrollo web con Java, Servlets, MySQL y JavaScript.">
+<style>
+:root{--bg:#f6f7f9;--card:#fff;--text:#1f2937;--muted:#6b7280;--line:#e5e7eb;--acc:#0f766e;--accbg:#ccfbf1}
+@media (prefers-color-scheme:dark){:root{--bg:#0f1115;--card:#171a21;--text:#e5e7eb;--muted:#9ca3af;--line:#262b36;--acc:#2dd4bf;--accbg:#12332f}}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+.wrap{max-width:1000px;margin:auto;padding:0 20px}
+nav{display:flex;justify-content:space-between;align-items:center;padding:18px 0}
+nav b{font-size:18px}nav a{color:var(--muted);text-decoration:none;margin-left:18px;font-size:14px;font-weight:600}nav a:hover{color:var(--acc)}
+.hero{padding:56px 0 40px}.hero h1{font-size:clamp(32px,6vw,52px);line-height:1.1;margin:0 0 14px}
+.hero p{max-width:640px;color:var(--muted);font-size:18px;margin:0 0 24px}
+.btn{display:inline-block;padding:11px 20px;border-radius:10px;font-weight:600;text-decoration:none;margin:0 10px 10px 0;border:1px solid var(--acc);color:var(--acc)}
+.btn.p{background:var(--acc);color:var(--bg)}
+section{padding:36px 0}h2{font-size:24px;margin:0 0 18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}.chips span{background:var(--accbg);color:var(--acc);padding:5px 12px;border-radius:999px;font-size:13px;font-weight:600}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.shots{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;margin:20px 0}
+.shots img{width:100%;border-radius:12px;border:1px solid var(--line);display:block}
+.shots figcaption{font-size:13px;color:var(--muted);margin-top:6px}.shots figure{margin:0}
+ul{padding-left:20px;margin:8px 0}li{margin:5px 0}h3{margin:22px 0 6px;font-size:17px}
+.muted{color:var(--muted)}footer{padding:30px 0 50px;color:var(--muted);font-size:14px;border-top:1px solid var(--line);margin-top:30px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav><b>TU NOMBRE</b><div><a href="#proyecto">Proyecto</a><a href="#habilidades">Habilidades</a><a href="#contacto">Contacto</a></div></nav>
+
+<header class="hero">
+  <h1>Desarrollo software que resuelve problemas reales de negocio.</h1>
+  <p>Soy TU NOMBRE, desarrollador junior con experiencia práctica en Java, bases de datos y desarrollo web. Construí de principio a fin un sistema financiero para un emprendimiento de repostería.</p>
+  <a class="btn p" href="#proyecto">Ver mi proyecto</a><a class="btn" href="#contacto">Contactarme</a>
+</header>
+
+<section id="proyecto">
+  <h2>Proyecto destacado</h2>
+  <div class="card">
+    <h3 style="margin-top:0;font-size:22px">Folatokfe · Sistema de control financiero y costeo</h3>
+    <p class="muted">Aplicación web para un negocio de galletas personalizadas: registra ingresos, gastos, inversiones y compras a crédito, y calcula costos y precios de venta por tamaño y tipo de producto.</p>
+    <div class="chips"><span>Java</span><span>Servlets</span><span>Maven</span><span>Tomcat</span><span>MySQL / MariaDB</span><span>JDBC</span><span>REST + JSON</span><span>JavaScript</span><span>HTML / CSS</span></div>
+    <div class="shots">
+      <figure><img src="assets/resumen.png" alt="Panel de resumen financiero con tarjetas y tabla de movimientos"><figcaption>Resumen: indicadores, registro de movimientos, filtro por mes y exportación a CSV.</figcaption></figure>
+      <figure><img src="assets/costos.png" alt="Módulo de costos con receta, tamaños y precios sugeridos"><figcaption>Costos: parámetros, receta del lote y precio sugerido por tamaño.</figcaption></figure>
+    </div>
+    <h3>Qué hace</h3>
+    <ul>
+      <li>Panel con ingresos, gastos, inversiones, deuda con proveedores y utilidad neta.</li>
+      <li>Registro, eliminación y cambio de estado (pendiente/pagado) de movimientos; filtro por mes y exportación a CSV.</li>
+      <li>Calculadora de costos para galletas de 5, 6, 7 y 8 cm: ingredientes escalados por área, merma, mano de obra, costos variables y costos fijos repartidos por lote.</li>
+      <li>Costos exclusivos y margen propio para tres tipos de producto (didácticas, corporativas y personalizadas), con precio sugerido por tipo y tamaño.</li>
+      <li>Reporte de utilidad por finalidad de la venta.</li>
+    </ul>
+    <h3>Decisiones técnicas</h3>
+    <ul>
+      <li>API REST con Servlets (GET, POST, PUT, DELETE) y respuestas JSON con Gson.</li>
+      <li>Consultas con <code>PreparedStatement</code> y validación en el servidor (tipos, montos con <code>BigDecimal</code>, fechas, longitudes).</li>
+      <li>CORS con lista de orígenes permitidos y credenciales de base de datos por variables de entorno.</li>
+      <li>Frontend sin frameworks: se usa <code>textContent</code> en vez de <code>innerHTML</code> con datos para evitar XSS, y el CSV neutraliza inyección de fórmulas.</li>
+    </ul>
+    <h3>Retos que resolví</h3>
+    <ul>
+      <li>Configurar el despliegue de un WAR en Tomcat con MySQL y diagnosticar errores del driver JDBC y de permisos.</li>
+      <li>Corregir la lógica contable: separar el costo de una compra a crédito del saldo de la deuda.</li>
+      <li>Modelar costos que escalan con el tamaño del producto frente a costos fijos por lote o por mes.</li>
+    </ul>
+    <h3>Siguientes pasos</h3>
+    <p class="muted" style="margin:0">Autenticación de usuarios, edición de movimientos, guardar recetas y lotes en la base de datos y despliegue en la nube.</p>
+    <p style="margin-bottom:0"><a class="btn p" href="https://github.com/diegoamcamargo28/TU_REPOSITORIO">Ver código en GitHub</a></p>
+  </div>
+</section>
+
+<section id="habilidades">
+  <h2>Habilidades</h2>
+  <div class="grid">
+    <div class="card"><b>Backend</b><div class="chips" style="margin-top:10px"><span>Java</span><span>Servlets</span><span>JDBC</span><span>Maven</span><span>Tomcat</span></div></div>
+    <div class="card"><b>Datos</b><div class="chips" style="margin-top:10px"><span>MySQL</span><span>MariaDB</span><span>SQL</span><span>Modelado de tablas</span></div></div>
+    <div class="card"><b>Frontend</b><div class="chips" style="margin-top:10px"><span>JavaScript</span><span>HTML5</span><span>CSS3</span><span>Diseño responsivo</span></div></div>
+  </div>
+</section>
+
+<section id="contacto">
+  <h2>Contacto</h2>
+  <div class="card">
+    <p style="margin-top:0">¿Tienes una oportunidad o quieres ver el sistema funcionando? Escríbeme.</p>
+    <a class="btn p" href="mailto:TU_CORREO@ejemplo.com">TU_CORREO@ejemplo.com</a>
+    <a class="btn" href="https://github.com/diegoamcamargo28">GitHub</a>
+    <a class="btn" href="https://www.linkedin.com/in/TU_PERFIL">LinkedIn</a>
+  </div>
+</section>
+<footer>© TU NOMBRE</footer>
+</div>
+</body>
+</html>
