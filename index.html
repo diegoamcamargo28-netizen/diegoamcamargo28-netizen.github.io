@@ -14,7 +14,7 @@ body{margin:0;font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);c
 nav{display:flex;justify-content:space-between;align-items:center;padding:18px 0}
 nav b{font-family:Georgia,serif;font-size:18px;letter-spacing:.06em}nav a{color:var(--muted);text-decoration:none;margin-left:18px;font-size:14px;font-weight:600}nav a:hover{color:var(--acc)}
 .hero{padding:52px 0 18px;border-bottom:2px solid var(--gold)}
-.hero .eyebrow{display:inline-block;padding:6px 10px;border-radius:999px;background:var(--accl);color:var(--acc);font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:18px}
+.hero .eyebrow{display:inline-block;padding:6px 10px;border-radius:999px;background:var(--accl);color:var(--acc);font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:12px}
 .hero h1{font-family:Georgia,serif;font-size:clamp(30px,5.5vw,48px);line-height:1.12;margin:0 0 14px}
 .hero p{max-width:660px;color:var(--muted);font-size:18px;margin:0 0 24px}
 .btn{display:inline-block;padding:11px 20px;border-radius:10px;font-weight:600;text-decoration:none;margin:0 10px 10px 0;border:1px solid var(--acc);color:var(--acc)}
@@ -27,9 +27,11 @@ section{padding:38px 0}h2{font-family:Georgia,serif;font-size:26px;margin:0 0 18
 .shots img{width:100%;border-radius:12px;border:1px solid var(--line);display:block}figcaption{font-size:13px;color:var(--muted);margin-top:6px}
 ul{padding-left:20px;margin:8px 0}li{margin:5px 0}.muted{color:var(--muted)}
 .aviso{font-size:13px;color:var(--muted);background:var(--accl);border-radius:10px;padding:8px 12px;margin:6px 0}
+.btn-row{display:flex;flex-wrap:wrap;gap:14px;margin-top:18px}
+.btn-row .btn{margin:0}
 footer{padding:30px 0 50px;color:var(--muted);font-size:14px;border-top:1px solid var(--line);margin-top:30px}
 .shots.dos{grid-template-columns:repeat(2,1fr)}.shots.tres{grid-template-columns:repeat(3,1fr);align-items:start}
-@media (max-width:760px){.shots.dos,.shots.tres{grid-template-columns:1fr}}
+@media (max-width:760px){.shots.dos,.shots.tres{grid-template-columns:1fr}.btn-row{flex-direction:column}.btn-row .btn{width:100%;text-align:center}}
 </style>
 </head>
 <body>
@@ -63,10 +65,10 @@ footer{padding:30px 0 50px;color:var(--muted);font-size:14px;border-top:1px soli
     <div class="chips"><span>Java</span><span>Servlets</span><span>Maven</span><span>Tomcat</span><span>MySQL / MariaDB</span><span>JDBC</span><span>REST + JSON</span><span>JavaScript</span></div>
     <div class="aviso">Las imágenes usan datos de demostración inventados; no se muestran datos reales del negocio.</div>
     <div class="shots dos">
-      <figure><a href="assets/resumen.jpg" target="_blank" rel="noopener"><img src="assets/resumen.jpg" alt="Panel de resumen financiero" loading="lazy"></a><figcaption>Resumen financiero y movimientos.</figcaption></figure>
-      <figure><a href="assets/costos-precios.jpg" target="_blank" rel="noopener"><img src="assets/costos-precios.jpg" alt="Tabla de costos y precios" loading="lazy"></a><figcaption>Costeo por producto y tamaño.</figcaption></figure>
-      <figure><a href="assets/costos-desglose.jpg" target="_blank" rel="noopener"><img src="assets/costos-desglose.jpg" alt="Desglose del costo" loading="lazy"></a><figcaption>Desglose de costos y punto de equilibrio.</figcaption></figure>
-      <figure><a href="assets/inventario.jpg" target="_blank" rel="noopener"><img src="assets/inventario.jpg" alt="Inventario de ingredientes" loading="lazy"></a><figcaption>Inventario y alertas de stock.</figcaption></figure>
+      <figure><a href="assets/resumen.jpg" target="_blank" rel="noopener"><img src="assets/resumen.jpg" alt="Panel de resumen financiero" loading="lazy"></a><figcaption>Resumen financiero y movimiento...</figcaption></figure>
+      <figure><a href="assets/costos-precios.jpg" target="_blank" rel="noopener"><img src="assets/costos-precios.jpg" alt="Tabla de costos y precios" loading="lazy"></a><figcaption>Costeo por producto...</figcaption></figure>
+      <figure><a href="assets/costos-desglose.jpg" target="_blank" rel="noopener"><img src="assets/costos-desglose.jpg" alt="Desglose del costo" loading="lazy"></a><figcaption>Desglose de costos y puntos...</figcaption></figure>
+      <figure><a href="assets/inventario.jpg" target="_blank" rel="noopener"><img src="assets/inventario.jpg" alt="Inventario de ingredientes" loading="lazy"></a><figcaption>Inventario y alertas de stock...</figcaption></figure>
     </div>
     <h3>Qué incluye</h3>
     <ul>
@@ -94,8 +96,10 @@ footer{padding:30px 0 50px;color:var(--muted);font-size:14px;border-top:1px soli
       <li>Compra por pasos: envío, pago y confirmación.</li>
       <li>Panel para crear, editar y ocultar productos.</li>
     </ul>
-    <p style="margin-bottom:0"><a class="btn p" href="https://github.com/minitoonlink-prog/folatokfe-frontend">Ver Codigo del Frontend</a></p>
-      <p style="margin-bottom:0"><a class="btn p" href="https://github.com/minitoonlink-prog/folatokfe-backend/tree/main">Ver Codigo del Backend</a></p>
+    <div class="btn-row">
+      <a class="btn p" href="https://github.com/minitoonlink-prog/folatokfe-frontend">Ver Código del Frontend</a>
+      <a class="btn p" href="https://github.com/minitoonlink-prog/folatokfe-backend/tree/main">Ver Código del Backend</a>
+    </div>
   </article>
 </section>
 
